@@ -1,0 +1,89 @@
+html {
+    font-size: 1.2rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 200;
+}
+
+div {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 50%;
+    max-width: 576px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 576px;
+}
+
+input,
+label {
+    margin: 8px 0;
+}
+
+input {
+    font-size: 1rem;
+    padding: 8px;
+    padding-left: 14px;
+}
+
+button {
+    font-size: 1rem;
+    margin: 8px 0 4px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#rrResetButton {
+    background-color: rgb(250, 228, 228);
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.rentersRenteResDiv {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+    opacity: 0;
+    transition: 250ms;
+}
+
+.rentersRenteResDivAfter {
+    padding: 7px 0;
+    border: 1px rgba(205, 206, 206, 0.5) solid;
+    opacity: 1;
+}
+
+p {
+    line-height: 1.3rem;
+    margin: 5px 15px;
+}
+
+@media (min-width: 880px) {
+
+    div {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 420px) {
+    div {
+        width: 100%;
+    }
+
+}

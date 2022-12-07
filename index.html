@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalkulatorSiden</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <h1>Kalkulatorer</h1>
+
+    <div id="RentersRenteKalk">
+        <h3>Renters rente</h3>
+        <form>
+            <label for="rentersRenteInp1">Startkapital:</label>
+            <input id="rentersRenteInp1" type="number" required>
+            <label for="rentersRenteInp2">Rente:</label>
+            <input id="rentersRenteInp2" type="number" placeholder="%" required>
+            <label for="rentersRenteInp3">Antall år:</label>
+            <input id="rentersRenteInp3" type="number" required>
+            <button type="submit" id="rrButton">Kalkuler</button>
+        </form>
+        <button id="rrResetButton">Nullstill</button>
+        <div class="rentersRenteResDiv">
+            <p id="rentersRenteRes0"></p>
+            <p id="rentersRenteRes1"></p>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>

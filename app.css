@@ -54,7 +54,7 @@ button:active {
     opacity: 0.8;
 }
 
-.rentersRenteResDiv {
+.resDiv {
     width: 100%;
     margin-top: 10px;
     border-radius: 5px;
@@ -63,7 +63,7 @@ button:active {
     transition: 250ms;
 }
 
-.rentersRenteResDivAfter {
+.resDivAfter {
     padding: 7px 0;
     border: 1px rgba(205, 206, 206, 0.5) solid;
     opacity: 1;

@@ -33,9 +33,11 @@ label {
 }
 
 input {
+    border: none;
     font-size: 1rem;
-    padding: 8px;
+    padding: 12px;
     padding-left: 14px;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .nav {
@@ -45,15 +47,19 @@ input {
 .navButton {
     margin: 5px;
     width: 160px;
+    padding: 10px 8px;
+    border-radius: 0;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 button {
     font-size: 1rem;
     margin: 8px 0 4px;
-    padding: 10px 10px;
+    padding: 11px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .resetButton {
@@ -102,14 +108,15 @@ p {
     }
 
     .navButton {
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: auto;
     }
 }
 
-@media (max-width: 310px) {
+@media (max-width: 325px) {
     .navButton {
         display: block;
+        margin-bottom: 8px;
         width: 100%;
     }
 }

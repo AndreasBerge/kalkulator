@@ -78,7 +78,7 @@ navTTKMbutton.addEventListener("click", () => {
     calcSelect.rentersRente = false;
     resetValues();
     heading.textContent = "Tid til kapitalmål";
-    år_kapitalMål.textContent = "Kapitalmål";
+    år_kapitalMål.textContent = "Kapitalmål:";
     form.addEventListener("submit", tidTilKapitalMål_EL);
 })
 

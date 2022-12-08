@@ -11,26 +11,29 @@
 
 <body>
     <h1>Kalkulatorer</h1>
-
+    <nav class="nav">
+        <button id="navRRbutton" class="navButton">Renters rente</button>
+        <button id="navTTKMbutton" class="navButton">Tid til kapitalmål</button>
+    </nav>
     <div id="RentersRenteKalk">
         <h3>Renters rente</h3>
-        <form id="rrForm">
-            <label for="rentersRenteInp1">Startkapital:</label>
-            <input id="rentersRenteInp1" type="number" required>
-            <label for="rentersRenteInp2">Rente:</label>
-            <input id="rentersRenteInp2" type="number" placeholder="%" required>
-            <label for="rentersRenteInp3">Antall år:</label>
-            <input id="rentersRenteInp3" type="number" required>
-            <button type="submit" id="rrButton">Kalkuler</button>
+        <form>
+            <label for="inp1">Startkapital:</label>
+            <input id="inp1" type="number" required>
+            <label for="inp2">Rente:</label>
+            <input id="inp2" type="number" placeholder="%" required step="0.1">
+            <label id="år_kapitalMål" for="inp3">Antall år:</label>
+            <input id="inp3" type="number" required>
+            <button type="submit">Kalkuler</button>
         </form>
-        <button id="rrResetButton">Nullstill</button>
-        <div id="rentersRenteResDiv" class="resDiv">
-            <p id="rentersRenteRes0"></p>
-            <p id="rentersRenteRes1"></p>
+        <button class="resetButton" id="resetButton">Nullstill</button>
+        <div id="resDiv" class="resDiv">
+            <p id="res0"></p>
+            <p id="res1"></p>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 
-<script src="app.js"></script>
 
 </html>

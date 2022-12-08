@@ -1,34 +1,88 @@
-const rentersRenteInp1 = document.querySelector("#rentersRenteInp1");
-const rentersRenteInp2 = document.querySelector("#rentersRenteInp2");
-const rentersRenteInp3 = document.querySelector("#rentersRenteInp3");
-const rrResetButton = document.querySelector("#rrResetButton");
-const rrForm = document.querySelector("#rrForm");
+const inp1 = document.querySelector("#inp1");
+const inp2 = document.querySelector("#inp2");
+const inp3 = document.querySelector("#inp3");
 
-const rentersRenteResDiv = document.querySelector("#rentersRenteResDiv");
+const år_kapitalMål = document.querySelector("#år_kapitalMål")
 
-const rentersRenteRes0 = document.querySelector("#rentersRenteRes0");
-const rentersRenteRes1 = document.querySelector("#rentersRenteRes1");
+const resetButton = document.querySelector("#resetButton");
+const form = document.querySelector("form");
+const navRRbutton = document.querySelector("#navRRbutton");
+const navTTKMbutton = document.querySelector("#navTTKMbutton");
 
-function calulatorRR(startCap, interest, years) {
+const heading = document.querySelector("h3");
+
+const resDiv = document.querySelector("#resDiv");
+
+const res0 = document.querySelector("#res0");
+const res1 = document.querySelector("#res1");
+
+function calulator(startCap, interest, yearsEndCap, type) {
     const interestFactor = interest / 100 + 1;
-    const result = Math.floor(startCap * (interestFactor ** years));
-    const difference = Math.floor(result - startCap);
-    rentersRenteRes0.textContent = `Etter ${years} år har kapitalen vokst til ${result.toLocaleString()} kr.`;
-    rentersRenteRes1.textContent = `Differanse: ${difference.toLocaleString()} kr.`;
-    rentersRenteResDiv.classList.add("resDivAfter");
+    if (type === "rentersRente") {
+        const result = Math.floor(startCap * (interestFactor ** yearsEndCap));
+        const difference = Math.floor(result - startCap);
+        res0.textContent = `Etter ${yearsEndCap} år har kapitalen vokst til ${result.toLocaleString()} kr.`;
+        res1.textContent = `Differanse: ${difference.toLocaleString()} kr.`;
+        resDiv.classList.add("resDivAfter");
+    } else if (type === "tidTilKapitalMål") {
+        const endCap = Number(yearsEndCap.toLocaleString());
+        const divided = yearsEndCap / startCap;
+        const logDivided = Math.log(divided);
+        const logInterestFactor = Math.log(interestFactor);
+        let result = logDivided / logInterestFactor;
+        resultRounded = result.toFixed(1);
+        res0.textContent = `Med ${interest}% rente har kapitalen vokst til ${endCap.toLocaleString()} kr etter ${resultRounded} år.`;
+        resDiv.classList.add("resDivAfter");
+    }
 }
 
-rrForm.addEventListener("submit", (e) => {
+function resetValues() {
+    form.removeEventListener("submit", rentersRente_EL);
+    form.removeEventListener("submit", tidTilKapitalMål_EL);
+    resDiv.classList.remove("resDivAfter");
+    res0.textContent = null;
+    res1.textContent = null;
+    inp1.value = null;
+    inp2.value = null;
+    inp3.value = null;
+}
+
+function rentersRente_EL(e) {
     e.preventDefault();
-    calulatorRR(rentersRenteInp1.value, rentersRenteInp2.value, rentersRenteInp3.value);
+    const type = "rentersRente";
+    calulator(inp1.value, inp2.value, inp3.value, type);
+}
+
+function rentersRenteDef() {
+    resetValues();
+    heading.textContent = "Renters rente";
+    år_kapitalMål.textContent = "Antall år:";
+    form.addEventListener("submit", rentersRente_EL);
+}
+
+function tidTilKapitalMål_EL(e) {
+    e.preventDefault();
+    res1.style.display = "none";
+    const type = "tidTilKapitalMål";
+    calulator(inp1.value, inp2.value, inp3.value, type);
+}
+
+navTTKMbutton.addEventListener("click", () => {
+    resetValues();
+    heading.textContent = "Tid til kapitalmål";
+    år_kapitalMål.textContent = "Kapitalmål";
+    form.addEventListener("submit", tidTilKapitalMål_EL);
 })
 
-rrResetButton.addEventListener("click", () => {
-    rentersRenteResDiv.classList.remove("resDivAfter");
-    rentersRenteRes0.textContent = null;
-    rentersRenteRes1.textContent = null;
-    rentersRenteInp1.value = null;
-    rentersRenteInp2.value = null;
-    rentersRenteInp3.value = null;
+navRRbutton.addEventListener("click", () => {
+    res1.style.display = "block";
+    rentersRenteDef();
 })
 
+window.addEventListener("DOMContentLoaded", () => {
+    rentersRenteDef();
+})
+
+resetButton.addEventListener("click", () => {
+    resetValues();
+})

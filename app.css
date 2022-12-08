@@ -4,6 +4,7 @@ html {
 
 h1 {
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h3 {
@@ -16,7 +17,7 @@ div {
     margin: 0 auto;
     flex-direction: column;
     width: 50%;
-    max-width: 576px;
+    max-width: 500px;
 }
 
 form {
@@ -37,6 +38,15 @@ input {
     padding-left: 14px;
 }
 
+.nav {
+    text-align: center;
+}
+
+.navButton {
+    margin: 5px;
+    width: 160px;
+}
+
 button {
     font-size: 1rem;
     margin: 8px 0 4px;
@@ -46,7 +56,7 @@ button {
     cursor: pointer;
 }
 
-#rrResetButton {
+.resetButton {
     background-color: rgb(250, 228, 228);
 }
 
@@ -74,16 +84,26 @@ p {
     margin: 5px 15px;
 }
 
-@media (min-width: 880px) {
-
+@media (min-width: 580px) {
     div {
-        width: 30vw;
+        width: 70vw;
+    }
+}
+
+@media (max-width: 580px) {
+    div {
+        width: 80%;
     }
 }
 
 @media (max-width: 420px) {
     div {
         width: 100%;
+    }
+
+    .navButton {
+        font-size: 0.8rem;
+        width: auto;
     }
 
 }

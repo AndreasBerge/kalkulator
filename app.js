@@ -52,12 +52,14 @@ function resetValues() {
     inp1.value = null;
     inp2.value = null;
     inp3.value = null;
+    // resDiv.style.display = "none";
 }
 
 function rentersRente_EL(e) {
     e.preventDefault();
     const type = "rentersRente";
     calulator(inp1.value, inp2.value, inp3.value, type);
+    // resDiv.style.display = "block";
 }
 
 function rentersRenteDef() {
@@ -72,6 +74,7 @@ function tidTilKapitalMål_EL(e) {
     res1.style.display = "none";
     const type = "tidTilKapitalMål";
     calulator(inp1.value, inp2.value, inp3.value, type);
+    // resDiv.style.display = "block";
 }
 
 navTTKMbutton.addEventListener("click", () => {

@@ -10,6 +10,7 @@ h1 {
 h3 {
     font-size: 1.35rem;
     font-weight: 200;
+    margin-bottom: 20px;
 }
 
 div {
@@ -49,8 +50,9 @@ input {
 }
 
 .navButton {
+    border: none;
     margin: 5px;
-    width: 160px;
+    width: 165px;
     padding: 10px 8px;
     border-radius: 0;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
@@ -59,15 +61,17 @@ input {
 button {
     font-size: 1rem;
     margin: 8px 0 4px;
-    padding: 12px;
+    padding: 14px;
     border-radius: 5px;
-    border: none;
+    border: 1px rgb(233, 232, 232) solid;
     cursor: pointer;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .resetButton {
+    box-shadow: none;
     background-color: rgb(250, 228, 228);
+    width: 50%;
 }
 
 button:active {
@@ -75,20 +79,24 @@ button:active {
 }
 
 .resDiv {
-    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    height: 0;
+    font-size: 1.05rem;
     width: 100%;
     margin-top: 10px;
-    border-radius: 5px;
     overflow-wrap: break-word;
     opacity: 0;
-    transition: 250ms;
 }
 
 .resDivAfter {
+    height: auto;
+    text-align: center;
     padding: 7px 0;
     border: 1px rgba(205, 206, 206, 0.5) solid;
     opacity: 1;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    transition: 350ms;
 }
 
 p {
@@ -112,16 +120,12 @@ p {
     div {
         width: 100%;
     }
-
-    .navButton {
-        font-size: 1rem;
-        width: auto;
-    }
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
     .navButton {
         display: block;
+        margin: 0;
         margin-bottom: 8px;
         width: 100%;
     }

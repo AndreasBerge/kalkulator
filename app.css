@@ -1,5 +1,5 @@
 html {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 h1 {
@@ -32,10 +32,14 @@ label {
     margin: 8px 0;
 }
 
+label {
+    font-size: 1.05rem;
+}
+
 input {
     border: none;
     font-size: 1rem;
-    padding: 12px;
+    padding: 14px;
     padding-left: 14px;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
@@ -55,7 +59,7 @@ input {
 button {
     font-size: 1rem;
     margin: 8px 0 4px;
-    padding: 11px;
+    padding: 12px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -71,6 +75,7 @@ button:active {
 }
 
 .resDiv {
+    font-size: 1.1rem;
     width: 100%;
     margin-top: 10px;
     border-radius: 5px;
@@ -83,6 +88,7 @@ button:active {
     padding: 7px 0;
     border: 1px rgba(205, 206, 206, 0.5) solid;
     opacity: 1;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 p {

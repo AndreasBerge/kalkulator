@@ -36,9 +36,16 @@ function calulator(startCap, interest, yearsEndCap, type) {
     }
 }
 
+const calcSelect = {
+    rentersRente: true
+}
+
 function resetValues() {
-    form.removeEventListener("submit", rentersRente_EL);
-    form.removeEventListener("submit", tidTilKapitalMål_EL);
+    if (calcSelect.rentersRente) {
+        form.removeEventListener("submit", tidTilKapitalMål_EL);
+    } else {
+        form.removeEventListener("submit", rentersRente_EL);
+    }
     resDiv.classList.remove("resDivAfter");
     res0.textContent = null;
     res1.textContent = null;
@@ -68,6 +75,7 @@ function tidTilKapitalMål_EL(e) {
 }
 
 navTTKMbutton.addEventListener("click", () => {
+    calcSelect.rentersRente = false;
     resetValues();
     heading.textContent = "Tid til kapitalmål";
     år_kapitalMål.textContent = "Kapitalmål";
@@ -75,6 +83,7 @@ navTTKMbutton.addEventListener("click", () => {
 })
 
 navRRbutton.addEventListener("click", () => {
+    calcSelect.rentersRente = true;
     res1.style.display = "block";
     rentersRenteDef();
 })

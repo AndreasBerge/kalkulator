@@ -102,8 +102,14 @@ p {
     }
 
     .navButton {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         width: auto;
     }
+}
 
+@media (max-width: 310px) {
+    .navButton {
+        display: block;
+        width: 100%;
+    }
 }

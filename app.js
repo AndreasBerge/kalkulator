@@ -18,6 +18,7 @@ const res1 = document.querySelector("#res1");
 
 function calulator(startCap, interest, yearsEndCap, type) {
     const interestFactor = interest / 100 + 1;
+    resetButton.style.display = "inline"
     if (type === "rentersRente") {
         const result = Math.floor(startCap * (interestFactor ** yearsEndCap));
         const difference = Math.floor(result - startCap);
@@ -47,6 +48,8 @@ function resetValues() {
         form.removeEventListener("submit", rentersRente_EL);
     }
     resDiv.classList.remove("resDivAfter");
+    resetButton.style.display = "none";
+
     res0.textContent = null;
     res1.textContent = null;
     inp1.value = null;

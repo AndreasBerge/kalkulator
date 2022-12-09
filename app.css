@@ -73,6 +73,10 @@ button {
 }
 
 .resetButton {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: none;
     box-shadow: none;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
@@ -85,11 +89,10 @@ button:active {
 }
 
 .resDiv {
-    display: block;
+    width: 100%;
     text-align: center;
     height: 0;
     font-size: 1.05rem;
-    width: 100%;
     margin-bottom: 10px;
     overflow-wrap: break-word;
     opacity: 0;
@@ -98,7 +101,6 @@ button:active {
 .resDivAfter {
     -webkit-appearance: none;
     height: auto;
-    text-align: center;
     padding: 7px 0;
     border: 1px rgba(205, 206, 206, 0.5) solid;
     opacity: 1;

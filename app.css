@@ -38,12 +38,13 @@ label {
 }
 
 input {
+    border: 1px white solid;
     -webkit-appearance: none;
-    border: none;
     font-size: 1rem;
     padding: 14px;
     padding-left: 14px;
     -webkit-box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .nav {
@@ -68,9 +69,11 @@ button {
     border: 1px rgb(233, 232, 232) solid;
     cursor: pointer;
     -webkit-box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .resetButton {
+    box-shadow: none;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     background-color: rgb(250, 228, 228);
@@ -100,6 +103,7 @@ button:active {
     border: 1px rgba(205, 206, 206, 0.5) solid;
     opacity: 1;
     -webkit-box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
     transition: 300ms;
 }
 

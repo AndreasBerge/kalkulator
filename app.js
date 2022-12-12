@@ -18,14 +18,15 @@ const res1 = document.querySelector("#res1");
 
 function calulator(startCap, interest, yearsEndCap, type) {
     const interestFactor = interest / 100 + 1;
-    resetButton.style.display = "inline"
+    resetButton.style.display = "inline";
+    resDiv.classList.add("resDivAfter");
     if (type === "rentersRente") {
         const result = Math.floor(startCap * (interestFactor ** yearsEndCap));
         const difference = Math.floor(result - startCap);
         res0.textContent = `Etter ${yearsEndCap} år har kapitalen vokst til ${result.toLocaleString()} kr.`;
         res1.textContent = `Differanse: ${difference.toLocaleString()} kr.`;
-        resDiv.classList.add("resDivAfter");
     } else if (type === "tidTilKapitalMål") {
+        if (Number(startCap) >= Number(yearsEndCap)) return res0.textContent = "Kapitalmål må være høyere enn startkapital!";
         const endCap = Number(yearsEndCap.toLocaleString());
         const divided = yearsEndCap / startCap;
         const logDivided = Math.log(divided);
@@ -33,8 +34,7 @@ function calulator(startCap, interest, yearsEndCap, type) {
         let result = logDivided / logInterestFactor;
         resultRounded = result.toFixed(1);
         res0.textContent = `Med ${interest}% rente har kapitalen vokst til ${endCap.toLocaleString()} kr etter ${resultRounded} år.`;
-        resDiv.classList.add("resDivAfter");
-    }
+    };
 }
 
 const calcSelect = {

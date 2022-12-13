@@ -15,7 +15,7 @@
         <button id="navRRbutton" class="navButton">Renters rente</button>
         <button id="navTTKMbutton" class="navButton">Tid til kapitalmål</button>
     </nav>
-    <div id="RentersRenteKalk">
+    <div>
         <h3>Renters rente</h3>
         <div id="resDiv" class="resDiv">
             <p id="res0"></p>
@@ -24,11 +24,11 @@
         </div>
         <form>
             <label for="inp1">Startkapital:</label>
-            <input id="inp1" type="number" required>
+            <input id="inp1" type="number" required min="1">
             <label for="inp2">Rente:</label>
-            <input id="inp2" type="number" placeholder="%" required step="0.01">
+            <input id="inp2" type="number" placeholder="%" required step="0.01" min="0.01">
             <label id="år_kapitalMål" for="inp3">Antall år:</label>
-            <input id="inp3" type="number" required step="0.1">
+            <input id="inp3" type="number" required step="0.1" min="0.1">
             <button type="submit">Kalkuler</button>
         </form>
         <!-- <button class="resetButton" id="resetButton">Nullstill</button> -->
